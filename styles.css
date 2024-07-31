@@ -1,0 +1,358 @@
+/* Estilos generales */
+body {
+    background-color: #F3F5FC;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 80vh;
+    background: #F3F5FC; 
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    margin-top: 30px; /* Ajusta el margen superior para dejar espacio al logo */
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    height: 48px;
+    width: auto;
+}
+
+.left-panel {
+    padding: 20px;
+    width: 70%;
+    height: 73vh;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.right-panel {
+    padding: 20px;
+    width: 30%;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.result {
+    display: none; /* Ocultar por defecto */
+}
+
+textarea {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+    box-sizing: border-box;
+    font-size: 32px;
+    margin-bottom: 30px;
+    outline: none;
+}
+
+textarea#input-text {
+    background-color: #F3F5FC; /* Fondo azul claro */
+    color: #0A3871; /* Texto azul oscuro */
+    height: 70vh; /* Altura fija para el textarea de entrada en desktop */
+}
+
+textarea#output-text {
+    background-color: #fff;
+    color: #343A40; 
+    height: 65vh; /* Altura fija para el textarea de salida en desktop */
+    font-size: 24px;
+    margin: 0 auto;
+}
+
+textarea::placeholder {
+    color: #343A40;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #888;
+    font-size: 12px;
+}
+
+.info .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #495057;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.base_input_area {
+    margin: 0 auto;
+    width: 680px;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 680px;
+}
+
+button {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 15px;
+    width: 318px;
+    background: #0A3871;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #34495e;
+}
+
+.regular-text {
+    font-size: 16px !important;
+}
+
+.bold-text {
+    font-size: 24px !important;
+    font-weight: bold;
+}
+
+.placeholder {
+    display: flex; /* Solo se muestra en desktop */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    border-radius: 25px;
+}
+
+.placeholder img {
+    width: 336px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.placeholder p {
+    margin: 5px 0;
+    color: #666;
+    text-align: center;
+    font-size: 16px;
+}
+
+#copy-btn {
+    display: none; /* Ocultar por defecto */
+    padding: 15px 20px;
+    border: 2px solid #0A3871;
+    border-radius: 15px;
+    width: 318px;
+    background: #fff;
+    color: #0A3871;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+#copy-btn:hover {
+    background: #e6e6e6;
+}
+
+/* Ocultar imagen del placeholder en tablets y móviles */
+@media only screen and (max-width: 1024px) {
+    .placeholder img {
+        display: none; /* Ocultar imagen en pantallas más pequeñas */
+    }
+}
+
+/* tablets */
+@media only screen and (min-width: 576px) and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+    }
+
+    .logo {
+        top: 10px;
+        left: -10px;
+        height: 41px;
+        width: auto;
+    }
+
+    .left-panel {
+        width: 90%;
+        padding: 20px;
+        margin: 10px 0;
+        height: auto; /* Remove fixed height */
+    }
+
+    .right-panel {
+        width: 90%;
+        padding: 30px;
+        margin: 10px 0;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    textarea#input-text {
+        height: 30vh;
+        font-size: 32px;
+    }
+
+    textarea#output-text {
+        height: 15vh;
+    }
+
+    .buttons {
+        flex-direction: row;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    button {
+        width: 100%;
+        margin: 10px;
+    }
+
+    .placeholder {
+        height: 100%; /* Ensure the placeholder takes full height */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .placeholder p {
+        display: block; /* Ensure paragraphs are visible */
+        margin: 10px 0;
+    }
+
+    #copy-btn {
+        display: none; /* Ocultar por defecto */
+        padding: 10px 15px;
+        border: 1px solid #0A3871;
+        border-radius: 15px;
+        width: 95%;
+        background: #fff;
+        color: #0A3871;
+        cursor: pointer;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+}
+
+/* mobile phones */
+@media only screen and (max-width: 575px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .logo {
+        top: 10px;
+        left: -10px;
+        height: 36px;
+        width: auto;
+    }
+
+    .left-panel, .right-panel {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        height: auto; /* Remove fixed height */
+    }
+
+    .right-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    textarea#input-text {
+        height: 30vh;
+        font-size: 20px;
+    }
+    /* textarea#input-text {
+        height: 30vh;
+        font-size: 32px;
+    } */
+
+    textarea#output-text {
+        height: 20vh;
+    }
+
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .placeholder {
+        height: 100%; /* Ensure the placeholder takes full height */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .placeholder p {
+        display: block; /* Ensure paragraphs are visible */
+        margin: 10px 0;
+    }
+
+    #copy-btn {
+        display: none;
+    }
+}
